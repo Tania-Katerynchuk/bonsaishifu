@@ -1,0 +1,383 @@
+@keyframes translateToTop {
+    0% {
+        transform: translateY(0%);
+    }
+    100% {
+        transform: translateY(-100%);
+    }
+}
+
+@keyframes increaseDecreaseScale50 {
+    0% { 
+        scale: calc(1.0);
+    }
+    50% { 
+        scale: calc(1.5);
+    }
+    100% { 
+        scale: calc(1.0);
+    }
+}
+
+@keyframes decreaseIncreaseScale50 {
+    0% { 
+        scale: calc(1.0);
+    }
+    50% { 
+        scale: calc(0.5);
+    }
+    100% { 
+        scale: calc(1.0);
+    }
+}
+
+.store-custom {
+    cursor: default;
+    padding-top: 3rem;
+    padding-bottom: 1.5rem;
+}
+
+.store-title-custom {
+    font-family: "bonzai";
+    font-size: 36px;
+    text-align: center;
+    color: #212529;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.store-title-custom:after {
+    content: '';
+    position: absolute;
+    width: 33%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 33%;
+    background-color: #c80000;
+    transform-origin: bottom center;
+}
+
+.store-grid-custom {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding-top: 1rem;
+}
+
+.store-item-custom {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.store-control-grid-custom {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x);
+}
+
+.store-price-custom {
+    grid-area: 1/1/1/1;
+    width: 7rem;
+    justify-self: left;
+}
+
+.store-count-custom {
+    visibility: hidden;
+    text-align: center;
+    grid-area: 1/2/1/2;
+    width: 7rem;
+    border: 1px solid #666666;
+    display: inline-block;
+    justify-self: right;
+}
+
+.store-num-custom {
+    width: 2rem;
+    height: 2rem;
+    text-align: center;
+    border: none;
+    pointer-events: none;
+}
+
+.store-num-custom:focus-visible {
+    outline: none;
+}
+
+.store-minus-custom {
+    font-size: 20px;
+    background-color: transparent;
+    border: none;
+    float: left;
+    padding-left: 1rem;
+}
+
+.store-plus-custom {
+    font-size: 20px;
+    background-color: transparent;
+    border: none;
+    float: right;
+    padding-right: 1rem;
+}
+
+.bucket-button-custom {
+    visibility: hidden;
+    position: fixed;
+    right: 1rem;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50% 50%;
+    z-index: 2;
+}
+
+.bucket-custom {
+    position: fixed;
+    right: 5rem;
+    width: 48rem;
+    height: 32rem;
+    background-color: #fdfdfd;
+    z-index: 3;
+    border-radius: 5% 5%;
+    border: 1px dashed #666666;
+    visibility: hidden;
+    overflow-y: auto;
+    margin: auto;
+    left: 0;
+    right: 0;
+}
+
+.bucket-fade-custom {
+    cursor: pointer;
+    position: fixed;
+    visibility: hidden;
+    z-index: 2;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb(0,0,0,0.6);
+}
+
+.bucket-item-custom {
+    border-bottom: 1px dashed #666666;
+}
+
+.bucket-img-custom {
+    width: 10rem;
+    height: 10rem;
+    padding-top: 1rem;
+    padding-left: 1rem;
+    border-radius: 50% 50%;
+    object-fit: cover;
+    float: left;
+}
+
+.bucket-label-grid-custom {
+    display: grid;
+    padding-left: 1rem;
+    height: 7rem;
+}
+
+.bucket-name-custom {
+    grid-area: 1/1/1/1;
+    padding-top: 1rem;
+    padding-right: 1rem;
+    font-size: 20px;
+}
+
+.bucket-desc-custom {
+    grid-area: 2/1/2/1;
+    padding-right: 1rem;
+    font-size: 16px;
+    height: 48px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.bucket-control-grid-custom {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.bucket-count-custom {
+    text-align: center;
+    grid-area: 1/2/1/2;
+    width: 14rem;
+    justify-self: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid #666666;
+}
+
+.bucket-price-custom {
+    grid-area: 1/1/1/1;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    justify-self: center;
+    width: 14rem;
+}
+
+.bucket-num-custom {
+    width: 9rem;
+    height: 2rem;
+    text-align: center;
+    border: none;
+    pointer-events: none;
+}
+
+.bucket-num-custom:focus-visible {
+    outline: none;
+}
+
+.bucket-minus-custom {
+    font-size: 20px;
+    background-color: transparent;
+    border: none;
+    float: left;
+    padding-left: 1rem;
+}
+
+.bucket-plus-custom {
+    font-size: 20px;
+    background-color: transparent;
+    border: none;
+    float: right;
+    padding-right: 1rem;
+}
+
+.bucket-empty-custom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 32rem;
+    font-size: 20px;
+    color: #666666;
+    margin-bottom: 0;
+}
+
+.bucket-order-grid-custom {
+    display: grid;
+    padding-right: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.bucket-sum-custom {
+    grid-area: 1/1/1/1;
+    text-align: right;
+    font-size: 16px;
+}
+
+.bucket-confirm-order-custom {
+    grid-area: 2/1/2/1;
+    justify-self: end;
+}
+
+.bucket-form-custom {
+    display: grid;
+    padding: 1rem;
+}
+
+.bucket-input-custom {
+    height: 1.5rem;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.bucket-textarea-custom {
+    width: 100%;
+    height: 7rem;
+    min-height: 7rem;
+    max-height: 7rem;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+.bucket-order-custom {
+    justify-self: end;
+}
+
+@media (max-width: 991px) {
+    .bucket-desc-custom {
+        height: 96px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .store-grid-custom {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .bucket-custom {
+        width: 32rem;
+        bottom: 0;
+    }
+
+    .bucket-label-grid-custom {
+        height: 10rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .store-title-custom {
+        font-size: 32px;
+    }
+
+    .store-grid-custom {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .store-control-grid-custom {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    
+    .store-price-custom {
+        grid-area: 2/1/2/1;
+        width: 100%;
+        justify-self: normal;
+        margin-top: 0.5rem;
+    }
+    
+    .store-count-custom {
+        grid-area: 1/1/1/1;
+        width: 100%;
+        justify-self: normal;
+        margin-bottom: 0.5rem;
+    }
+
+    .bucket-custom {
+        width: 16rem;
+        bottom: 0;
+    }
+
+    .bucket-img-custom {
+        float: none;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 60%;
+        height: 10rem;
+        padding-left: 0;
+    }
+
+    .bucket-label-grid-custom {
+        height: 13rem;
+        text-align: center;
+    }
+
+    .bucket-control-grid-custom {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .bucket-count-custom {
+        grid-area: 1/1/1/1;
+        margin-bottom: 0.5rem;
+    }
+
+    .bucket-price-custom {
+        grid-area: 2/1/2/1;
+        margin-top: 0.5rem;
+    }
+}

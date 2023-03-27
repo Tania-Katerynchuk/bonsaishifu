@@ -1,0 +1,123 @@
+@font-face {
+    font-family: "bonzai";
+    src: url("/fonts/bonzai.ttf")
+}
+
+@keyframes translateFromLeft {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+@keyframes translateToLeft {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes translateFromRight {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+@keyframes translateToRight {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+@keyframes underlineShow {
+    0% {
+        transform-origin: bottom center;
+        transform: scaleX(0);
+    }
+    100% {
+        transform-origin: bottom center;
+        transform: scaleX(1);
+    }
+}
+
+@keyframes underlineHide {
+    0% {
+        transform-origin: bottom center;
+        transform: scaleX(1);
+    }
+    100% {
+        transform-origin: bottom center;
+        transform: scaleX(0);
+    }
+}
+
+@keyframes opacityShow {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes opacityHide {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes opacitySemiHide {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.5;
+    }
+}
+
+@keyframes opacitySemiShow {
+    0% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+body, html {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.underline-custom:after {
+    animation: underlineShow 0.5s forwards;
+}

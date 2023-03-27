@@ -1,0 +1,336 @@
+<!doctype html>
+
+<html lang="en">
+
+    <head>
+
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Icon -->
+        <link rel="icon" type="image/x-icon" href="../img/logo.svg" />
+
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+        <!-- OpenLayers CSS -->
+        <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v7.2.2/ol.css"> -->
+
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="/css/index.css">
+        <link rel="stylesheet" href="/css/background.css">
+        <link rel="stylesheet" href="/css/header.css">
+        <link rel="stylesheet" href="/css/news.css">
+        <link rel="stylesheet" href="/css/info.css">
+        <link rel="stylesheet" href="/css/store.css">
+        <link rel="stylesheet" href="/css/gallery.css">
+        <link rel="stylesheet" href="/css/contact.css">
+        <link rel="stylesheet" href="/css/footer.css">
+        <link rel="stylesheet" href="/css/foreground.css">
+
+        <!-- Title -->
+        <title>BONSAI SHIFU</title>
+
+    </head>
+
+    <body>
+
+        <!-- Background -->
+        <div class="background-custom"></div>
+
+        <!-- Foreground -->
+        <div id="foreground-top" class="foreground-top-img"></div>
+        <div id="foreground-bottom" class="foreground-bottom-img"></div>
+
+        <!-- Header -->
+        <section id="header">
+            <!-- Banner -->
+            <nav id="banner" class="navbar banner-custom">
+                <div class="container-fluid justify-content-center">
+                    <button class="navbar-brand banner-brand-custom">
+                        <i id="logo" class="fa-brands fa-pagelines banner-fa-pagelines-custom"></i>
+                        BONSAI SHIFU
+                    </button>
+                </div>
+            </nav>
+
+            <!-- Panel -->
+            <nav id="panel" class="navbar navbar-expand-lg bg-light panel-custom">
+                <div class="container-fluid justify-content-center">
+                    <button id="panel-toggler" class="navbar-toggler collapsed panel-toggler-custom" onclick="clickPanelToggler(); animateInfoOnPanelCollapsed(); animateNewsOnPanelCollapsed(); animateStoreOnPanelCollapsed(); animateGalleryOnPanelCollapsed(); animateContactOnPanelCollapsed();" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
+                        <div class="navbar-nav panel-content-custom">
+                            <button class="panel-button-custom" onclick="clickNewsPage(); clickNewsButton()">
+                                <i id="news-fa" class="fa-solid fa-newspaper panel-fa-custom"></i>
+                                Новини
+                            </button>
+                            <button class="panel-button-custom" onclick="clickInfoPage(); clickInfoButton()">
+                                <i id="info-fa" class="fa-solid fa-circle-info panel-fa-custom"></i>
+                                Інформація
+                            </button>
+                            <button class="panel-button-custom" onclick="clickStorePage(); clickStoreButton()">
+                                <i id="store-fa" class="fa-solid fa-store panel-fa-custom"></i>
+                                Крамниця
+                            </button>
+                            <button class="panel-button-custom" onclick="clickGalleryPage(); clickGalleryButton()">
+                                <i id="gallery-fa" class="fa-solid fa-images panel-fa-custom"></i>
+                                Галерея
+                            </button>
+                            <button class="panel-button-custom" onclick="clickContactPage(); clickContactButton()">
+                                <i id="contact-fa" class="fa-solid fa-paper-plane panel-fa-custom"></i>
+                                Контакт
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Header carousel -->
+            <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
+                <div id="header-carousel-inner" class="carousel-inner"></div>
+            </div>
+        </section>
+
+        <section id="pages">
+            <!-- News -->
+            <section id="news">
+                <div class="container news-custom">
+                    <p id="news-title" class="news-title-custom">Новини</p>
+                    <div id="news-grid" class="news-grid-custom"></div>
+                </div>
+            </section>
+
+            <!-- Info -->
+            <section id="info">
+                <!-- Details -->
+                <div class="container info-custom">
+                    <p id="info-title" class="info-title-custom">Інформація</p>
+                    <p id="info-text" class="info-text-custom"></p>
+                </div>
+
+                <!-- Mini-gallery -->
+                <div id="mini-gallery-grid" class="mini-gallery-grid-custom">
+                    <div id="mini-gallery-item-pos1" class="mini-gallery-item-custom mini-gallery-pos1-custom" onclick="clickGalleryPage(); clickGalleryButton()">
+                        <button class="mini-gallery-content-custom" type="button">
+                            <i class="fa-solid fa-leaf mini-gallery-fa-custom"></i>
+                            <p class="mini-gallery-text-custom">ПЕРЕГЛЯНУТИ ГАЛЕРЕЮ</p>
+                        </button>
+                    </div>
+                    <div id="mini-gallery-item-pos2" class="mini-gallery-item-custom mini-gallery-pos2-custom" onclick="clickGalleryPage(); clickGalleryButton()">
+                        <button class="mini-gallery-content-custom">
+                            <i class="fa-brands fa-canadian-maple-leaf mini-gallery-fa-custom"></i>
+                            <p class="mini-gallery-text-custom">ПЕРЕГЛЯНУТИ ГАЛЕРЕЮ</p>
+                        </button>
+                    </div>
+                    <div id="mini-gallery-item-pos3" class="mini-gallery-item-custom mini-gallery-pos3-custom" onclick="clickGalleryPage(); clickGalleryButton()">
+                        <button class="mini-gallery-content-custom">
+                            <i class="fa-solid fa-tree-city mini-gallery-fa-custom"></i>
+                            <p class="mini-gallery-text-custom">ПЕРЕГЛЯНУТИ ГАЛЕРЕЮ</p>
+                        </button>
+                    </div>
+                    <div id="mini-gallery-item-pos4" class="mini-gallery-item-custom mini-gallery-pos4-custom" onclick="clickGalleryPage(); clickGalleryButton()">
+                        <button class="mini-gallery-content-custom">
+                            <i class="fa-brands fa-envira mini-gallery-fa-custom"></i>
+                            <p class="mini-gallery-text-custom">ПЕРЕГЛЯНУТИ ГАЛЕРЕЮ</p>
+                        </button>
+                    </div>
+                    <div id="mini-gallery-item-pos5" class="mini-gallery-item-custom mini-gallery-pos5-custom" onclick="clickGalleryPage(); clickGalleryButton()">
+                        <button class="mini-gallery-content-custom">
+                            <i class="fa-brands fa-pagelines mini-gallery-fa-custom"></i>
+                            <p class="mini-gallery-text-custom">ПЕРЕГЛЯНУТИ ГАЛЕРЕЮ</p>
+                        </button>
+                    </div>
+                    <div id="mini-gallery-item-pos6" class="mini-gallery-item-custom mini-gallery-pos6-custom" onclick="clickGalleryPage(); clickGalleryButton()">
+                        <button class="mini-gallery-content-custom">
+                            <i class="fa-solid fa-tree mini-gallery-fa-custom"></i>
+                            <p class="mini-gallery-text-custom">ПЕРЕГЛЯНУТИ ГАЛЕРЕЮ</p>
+                        </button>
+                    </div>
+                    <div id="mini-gallery-item-pos7" class="mini-gallery-item-custom mini-gallery-pos7-custom" onclick="clickGalleryPage(); clickGalleryButton()">
+                        <button class="mini-gallery-content-custom">
+                            <i class="fa-solid fa-clover mini-gallery-fa-custom"></i>
+                            <p class="mini-gallery-text-custom">ПЕРЕГЛЯНУТИ ГАЛЕРЕЮ</p>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Info grid -->
+                <div id="info-grid" class="info-grid-custom">
+                    <button class="info-item-custom" onclick="clickNewsPage(); clickNewsButton()">
+                        <i class="fa-solid fa-newspaper info-fa-custom"></i>
+                        <p class="info-name">Новини</p>
+                        <p class="info-desc">Залишайтеся в курсі останніх трендів та новин в світі бонсаїв, а також доглядайте за своїми рослинами з нашими корисними порадами</p>
+                        <p class="info-more">дізнатись більше</p>
+                        <i class="fa-solid fa-circle-info info-fa-more"></i>
+                    </button>
+                    <button class="info-item-custom" onclick="clickStorePage(); clickStoreButton()">
+                        <i class="fa-solid fa-store info-fa-custom"></i>
+                        <p class="info-name">Крамниця</p>
+                        <p class="info-desc">Широкий вибір бонсаїв різних розмірів та видів для задоволення потреб кожного любителя цієї унікальної форми садівництва</p>
+                        <p class="info-more">дізнатись більше</p>
+                        <i class="fa-solid fa-circle-info info-fa-more"></i>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Store -->
+            <section id="store">
+                <div class="container store-custom">
+                    <p id="store-title" class="store-title-custom">Крамниця</p>
+                    <div id="store-grid" class="store-grid-custom"></div>
+
+                    <!-- Bucket -->
+                    <div id="bucket-fade" class="bucket-fade-custom" onclick="clickBucket()"></div>
+                    <button id="bucket-button" type="button" class="btn btn-success bucket-button-custom" onclick="clickBucket()">
+                        <i class="fa-solid fa-bucket"></i>
+                    </button>
+                    <div id="bucket" class="bucket-custom"></div>
+                </div>
+            </section>
+
+            <!-- Gallery -->
+            <section id="gallery">
+                <div class="container gallery-custom">
+                    <p id="gallery-title" class="gallery-title-custom">Галерея</p>
+                    <div id="gallery-grid" class="gallery-grid-custom"></div>
+
+                    <!-- Gallery carousel -->
+                    <div id="gallery-fade" class="gallery-carousel-fade-custom" onclick="clickGalleryFade()"></div>
+                    <div id="gallery-carousel" class="carousel slide gallery-carousel-custom">
+                        <div id="gallery-carousel-inner" class="carousel-inner gallery-carousel-inner-custom"></div>
+                    </div>
+                    <button id="gallery-carousel-control-prev" class="carousel-control-prev gallery-carousel-control-custom" type="button" data-bs-target="#gallery-carousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden"></span>
+                    </button>
+                    <button id="gallery-carousel-control-next" class="carousel-control-next gallery-carousel-control-custom" type="button" data-bs-target="#gallery-carousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden"></span>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Contact -->
+            <section id="contact">
+                <div class="container contact-custom">
+                    <p id="contact-title" class="contact-title-custom">Контакт</p>
+                    <div id="contact-grid" class="contact-grid-custom">
+                        <div class="contact-data-custom">
+                            <p class="contact-name-custom">
+                                Ще залишились запитання? Зателефонувати..
+                                <i class="fa-regular fa-address-card contact-left-fa-custom"></i>
+                            </p>
+                            <p class="contact-desc-custom">
+                                <a id="contact-tel" class="contact-link-custom" href="tel:+380971307474"></a>
+                            </p>
+                            <p class="contact-desc-custom">
+                                <a id="contact-email" class="contact-link-custom" href="mailto:bonsaishifu@gmail.com"></a>
+                            </p>
+                        </div>
+                        <form class="contact-form-custom" action="https://formsubmit.co/83e950886d31d0b157c35e5bfe488f11" method="POST">
+                            <input type="hidden" name="_subject" value="BONSAI SHIFU - Нове повідомлення">
+                            <input type="hidden" name="_captcha" value="false">
+                            <input id="contact-next" type="hidden" name="_next">
+                            <p class="contact-name-custom">
+                                <i class="fa-regular fa-message contact-right-fa-custom"></i>
+                                .. або написати нам!
+                            </p>
+                            <div class="contact-input-row-custom">
+                                <input class="contact-input-name-custom" required type="text" name="Ім'я" minlength="2" maxlength="64" placeholder="Ім'я">
+                                <input class="contact-input-email-custom" required type="email" name="Електронна пошта" minlength="4" maxlength="128" placeholder="Електронна пошта">
+                                <input class="contact-input-tel-custom" required type="tel" name="Номер телефону" minlength="13" maxlength="13" placeholder="Номер телефону" pattern="^\+\d+" title="+380971307474">
+                            </div>
+                            <textarea class="contact-input-msg-custom" required type="text" name="Повідомлення" minlength="8" maxlength="256" placeholder="Повідомлення"></textarea>
+                            <button type="submit" class="btn btn-success">Надіслати</button>
+                        </form>
+                        <div class="contact-time-custom">
+                            <p class="contact-name-custom">
+                                Ми працюємо за наступним графіком:
+                                <i class="fa-regular fa-calendar contact-left-fa-custom"></i>
+                            </p>
+                            <p id="contact-work-time1" class="contact-desc-custom"></p>
+                            <p id="contact-work-time2" class="contact-desc-custom"></p>
+                        </div>
+                        <!-- <div class="contact-address-custom">
+                            <p class="contact-name-custom">
+                                <i class="fa-solid fa-magnifying-glass contact-right-fa-custom"></i>
+                                А ще варто завітати за адресою..
+                            </p>
+                            <p id="contact-address" class="contact-desc-custom"></p>
+                        </div> -->
+                    </div>
+                </div>
+
+                <!-- Map -->
+                <!-- <div id="contact-map" class="contact-map-custom"></div> -->
+            </section>
+        </section>
+
+        <!-- Footer -->
+        <section id="footer">
+            <div class="footer-custom">
+                <div class="container">
+                    <div class="footer-grid-custom">
+                        <div id="footer-item1" class="footer-item-custom footer-item-pos1-custom">
+                            <img class="footer-logo-custom" src="/img/logo.svg">
+                        </div>
+                        <!-- <div id="footer-item2" class="footer-item-custom footer-item-pos2-custom">
+                            <p class="footer-title-custom">
+                                <i class="fa-solid fa-map-location-dot footer-fa-title-custom"></i>
+                                Адреса
+                            </p>
+                            <p id="footer-address" class="footer-text-custom footer-address-custom" onclick="clickContactPage(); clickContactButton()"></p>
+                        </div> -->
+                        <div id="footer-item2" class="footer-item-custom footer-item-pos2-custom">
+                            <p class="footer-title-custom">
+                                <i class="fa-solid fa-address-book footer-fa-title-custom"></i>
+                                Контакт
+                            </p>
+                            <p class="footer-text-custom">
+                                <a id="footer-tel" class="footer-link-custom" href="tel:+380971307474"></a>
+                            </p>
+                            <p class="footer-text-custom">
+                                <a id="footer-email" class="footer-link-custom" href="mailto:bonsaishifu@gmail.com"></a>
+                            </p>
+                        </div>
+                        <div id="footer-item3" class="footer-item-custom footer-item-pos3-custom">
+                            <p class="footer-title-custom">
+                                <i class="fa-solid fa-calendar-days footer-fa-title-custom"></i>
+                                Час роботи
+                            </p>
+                            <p id="footer-work-time1" class="footer-text-custom"></p>
+                            <p id="footer-work-time2" class="footer-text-custom"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bootstrap -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+
+        <!-- Font Awesome -->
+        <script src="https://kit.fontawesome.com/c95831f9bf.js" crossorigin="anonymous"></script>
+
+        <!-- OpenLayers -->
+        <!-- <script src="https://cdn.jsdelivr.net/npm/ol@v7.2.2/dist/ol.js"></script> -->
+
+        <!-- Custom -->
+        <script src="/js/obf/utils.js"></script>
+        <script src="/js/obf/index.js"></script>
+        <script src="/js/obf/header.js"></script>
+        <script src="/js/obf/news.js"></script>
+        <script src="/js/obf/info.js"></script>
+        <script src="/js/obf/store.js"></script>
+        <script src="/js/obf/gallery.js"></script>
+        <script src="/js/obf/contact.js"></script>
+        <!-- <script src="/js/obf/map.js"></script> -->
+        <script src="/js/obf/footer.js"></script>
+        <script src="/js/obf/foreground.js"></script>
+
+    </body>
+
+</html>

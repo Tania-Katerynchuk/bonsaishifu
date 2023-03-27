@@ -1,0 +1,10 @@
+.background-custom {
+    background-image: url(/img/background.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    position: fixed;
+    min-width: 100%;
+    min-height: 100%;
+    opacity: 0.05;
+}

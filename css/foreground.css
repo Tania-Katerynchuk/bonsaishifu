@@ -1,0 +1,39 @@
+@keyframes foregroundTop {
+    0% {
+        transform: translate(0%, 0%);
+    }
+    100% {
+        transform: translate(100%, -100%);
+    }
+}
+
+@keyframes foregroundBottom {
+    0% {
+        transform: translate(0%, 0%);
+    }
+    100% {
+        transform: translate(-100%, 100%);
+    }
+}
+
+.foreground-top-img {
+    background-position: center center;
+    z-index: 9;
+    background-image: url(../img/foregroundTop.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: fixed;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.foreground-bottom-img {
+    background-position: center center;
+    z-index: 9;
+    background-image: url(../img/foregroundBottom.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: fixed;
+    min-width: 100%;
+    min-height: 100%;
+}

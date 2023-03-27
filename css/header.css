@@ -1,0 +1,164 @@
+@keyframes rotateFullRight360 {
+    0% { 
+        transform: rotate(0deg); 
+    }
+    100% { 
+        transform: rotate(360deg); 
+    }
+}
+
+@keyframes rotateFullLeft360 {
+    0% { 
+        transform: rotate(360deg); 
+    }
+    100% { 
+        transform: rotate(0deg); 
+    }
+}
+
+@keyframes bannerPaddingFromCollapsedMd {
+    0% {
+        padding-bottom: 64px;
+    }
+    100% {
+        padding-bottom: 436px;
+    }
+}
+
+@keyframes bannerPaddingToCollapsedMd {
+    0% {
+        padding-bottom: 436px;
+    }
+    100% {
+        padding-bottom: 64px;
+    }
+}
+
+@keyframes bannerPaddingFromCollapsedSm {
+    0% {
+        padding-bottom: 64px;
+    }
+    100% {
+        padding-bottom: 413.5px;
+    }
+}
+
+@keyframes bannerPaddingToCollapsedSm {
+    0% {
+        padding-bottom: 413.5px;
+    }
+    100% {
+        padding-bottom: 64px;
+    }
+}
+
+.banner-custom {
+    cursor: pointer;
+    z-index: 8;
+}
+
+.banner-custom:hover .banner-fa-pagelines-custom {
+    animation: rotateFullRight360 0.7s;
+}
+
+.banner-brand-custom {
+    font-family: "bonzai";
+    font-size: 48px;
+    color: #212529;
+    margin: 0;
+    background-color: transparent;
+    border: none;
+}
+
+.banner-fa-pagelines-custom {
+    animation: rotateFullLeft360 0.7s;
+    color: rgb(0, 150, 0);
+}
+
+.panel-custom {
+    z-index: 8;
+}
+
+.panel-sticky-custom {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.panel-toggler-custom:focus {
+    box-shadow: 0 0 0 0;
+}
+
+.panel-button-custom {
+    font-family: "bonzai";
+    font-size: 24px;
+    color: #212529;
+    background-color: transparent;
+    border: none;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.panel-button-custom:hover {
+    color: #666666;
+}
+
+.panel-fa-custom {
+    color: #212529;
+    font-size: 18px;
+}
+
+@media (min-width: 992px) {
+    .navbar-expand-lg .navbar-nav .panel-button-custom {
+        padding-right: 24px;
+        padding-left: 24px;
+    }
+}
+
+@media (max-width: 991px) {
+    .banner-custom:hover .banner-fa-pagelines-custom {
+        animation: none;
+    }
+
+    .banner-fa-pagelines-custom {
+        animation: none;
+    }
+
+    .panel-content-custom {
+        padding-top: 8px;
+    }
+    
+    .panel-button-custom {
+        margin-right: 100px;
+        margin-left: 100px;
+    }
+
+    .panel-content-custom .panel-button-custom:not(:last-child) {
+        border-bottom: 1px solid #ebebeb;
+    }
+
+    .panel-content-custom .panel-button-custom {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 767px) {
+    .banner-brand-custom {
+        font-size: 42px;
+    }
+
+    .panel-fa-custom {
+        font-size: 14px;
+    }
+
+    .panel-content-custom .panel-button-custom {
+        font-size: 21px;
+    }
+}
+
+.header-carousel-item-custom img {
+    object-fit: cover;
+    max-height: 300px;
+    min-height: 300px;
+}

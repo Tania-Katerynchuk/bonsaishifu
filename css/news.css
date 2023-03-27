@@ -1,0 +1,89 @@
+.news-custom {
+    cursor: default;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.news-title-custom {
+    font-family: "bonzai";
+    font-size: 36px;
+    text-align: center;
+    color: #212529;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.news-title-custom:after {
+    content: '';
+    position: absolute;
+    width: 33%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 33%;
+    background-color: #c80000;
+    transform-origin: bottom center;
+}
+
+.news-grid-custom {
+    display: grid;
+    padding-top: 1rem;
+}
+
+.news-item-custom {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+}
+
+.news-name-custom {
+    margin-bottom: 0.25rem;
+    margin-left: 0.25rem;
+    font-size: 24px;
+    color: black;
+    grid-area: 1/1/1/1;
+    padding-right: 2rem;
+}
+
+.news-date-custom {
+    text-align: end;
+    margin-top: 0.5rem;
+    margin-bottom: 0.25rem;
+    margin-right: 0.25rem;
+    margin-left: 0.25rem;
+    font-size: 18px;
+    color: black;
+    grid-area: 1/2/1/2;
+    align-self: end;
+}
+
+.news-content-custom {
+    border-top: 1px solid #a7a7a7;
+    grid-area: 2/1/2/3;
+}
+
+.news-desc-custom {
+    padding-top: 1rem;
+    font-size: 20px;
+    text-align: justify;
+    color: black;
+}
+
+@media (max-width: 767px) {
+    .news-title-custom {
+        font-size: 32px;
+    }
+
+    .news-name-custom {
+        font-size: 20px;
+    }
+
+    .news-date-custom {
+        font-size: 14px;
+    }
+
+    .news-desc-custom {
+        font-size: 18px;
+    }
+}

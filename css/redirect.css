@@ -1,0 +1,36 @@
+@keyframes rotateFullRight360 {
+    0% { 
+        transform: rotate(0deg); 
+    }
+    100% { 
+        transform: rotate(360deg); 
+    }
+}
+
+@keyframes rotateFullLeft360 {
+    0% { 
+        transform: rotate(360deg); 
+    }
+    100% { 
+        transform: rotate(0deg); 
+    }
+}
+
+.thanks {
+    padding-top: 3rem;
+    font-size: 4rem;
+}
+
+.offer {
+    font-size: 2rem;
+}
+
+.redirect-fa-compass {
+    font-size: 10rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.timer {
+    font-size: 2rem;
+}
