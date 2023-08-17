@@ -13,7 +13,8 @@ BONSAI SHIFU is a simple online store focused on selling bonsai trees.
 - saving products in the cart after reloading the page;
 - displaying the number of products in the cart when adding/removing products;
 - analytics to track which product most interested users;
-- the possibility to filter products in the store.
+- the possibility to filter products in the store;
+- the possibility of changing themes/colors.
 
 ### Tools and technologies:
 - Node JS - https://nodejs.org/
