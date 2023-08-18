@@ -118,6 +118,6 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
-.underline-custom:after {
+.underline:after {
     animation: underlineShow 0.5s forwards;
 }

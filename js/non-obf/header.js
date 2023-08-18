@@ -134,12 +134,12 @@ function stickyPanel() {
             banner.style.animation = ""
             banner.style.paddingBottom = '76px'
         }
-        panel.classList.add("panel-sticky-custom")
+        panel.classList.add("panel-sticky")
         
     } else {
         banner.style.animation = ""
         banner.style.paddingBottom = '8px'
-        panel.classList.remove("panel-sticky-custom")
+        panel.classList.remove("panel-sticky")
     }
 }
 
@@ -158,7 +158,7 @@ async function loadHeaderCarousel() {
         if (i == 0) {
             div.classList.add("active")
         }
-        div.classList.add("header-carousel-item-custom")
+        div.classList.add("header-carousel-item")
 
         let img = document.createElement("img")
         img.classList.add("d-block")

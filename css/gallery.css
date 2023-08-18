@@ -20,13 +20,13 @@
     }
 }
 
-.gallery-custom {
+.gallery {
     cursor: default;
     padding-top: 3rem;
     padding-bottom: 1.5rem;
 }
 
-.gallery-title-custom {
+.gallery-title {
     font-family: "bonzai";
     font-size: 36px;
     text-align: center;
@@ -35,7 +35,7 @@
     padding-bottom: 1rem;
 }
 
-.gallery-title-custom:after {
+.gallery-title:after {
     content: '';
     position: absolute;
     width: 33%;
@@ -47,14 +47,14 @@
     transform-origin: bottom center;
 }
 
-.gallery-grid-custom {
+.gallery-grid {
     width: 100%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     padding-top: 1rem;
 }
 
-.gallery-item-custom {
+.gallery-item {
     position: relative;
     background: linear-gradient(to bottom, #00ff0d77, #ffc40077);
     margin-left: 1.5rem;
@@ -64,22 +64,22 @@
     padding: 0;
 }
 
-.gallery-img-custom {
+.gallery-img {
     display: block;
     width: 100%;
     height: 12rem;
     object-fit: cover;
 }
 
-.gallery-item-custom:hover .gallery-img-custom {
+.gallery-item:hover .gallery-img {
     animation: moveToTopLeft 0.5s forwards;
 }
 
-.gallery-item-custom:not(:hover) .gallery-img-custom {
+.gallery-item:not(:hover) .gallery-img {
     animation: moveFromTopLeft 0.5s forwards;
 }
 
-.gallery-carousel-fade-custom {
+.gallery-carousel-fade {
     cursor: pointer;
     position: fixed;
     visibility: hidden;
@@ -91,7 +91,7 @@
     background-color: rgb(0,0,0,0.6);
 }
 
-.gallery-carousel-custom {
+.gallery-carousel {
     position: fixed;
     visibility: hidden;
     left: 0;
@@ -104,42 +104,42 @@
     pointer-events: none
 }
 
-.gallery-carousel-inner-custom {
+.gallery-carousel-inner {
     width: 50rem;
     pointer-events: auto;
 }
 
-.gallery-carousel-item-custom img {
+.gallery-carousel-item img {
     object-fit: contain;
     max-height: 25rem;
     min-height: 25rem;
 }
 
-.gallery-carousel-control-custom {
+.gallery-carousel-control {
     position: fixed;
     visibility: hidden;
     z-index: 3;
 }
 
 @media (max-width: 991px) {
-    .gallery-item-custom {
+    .gallery-item {
         margin-left: 1rem;
         margin-right: 1rem;
     }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
-    .gallery-grid-custom {
+    .gallery-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (max-width: 767px) {
-    .gallery-title-custom {
+    .gallery-title {
         font-size: 32px;
     }
 
-    .gallery-grid-custom {
+    .gallery-grid {
         grid-template-columns: repeat(1, 1fr);
     }
 }

@@ -55,11 +55,11 @@ gallery.addEventListener("animationstart", function(anim) {
 gallery.addEventListener("animationend", function(anim) {
     if (anim.target === this) {
         if (anim.animationName == "opacityShow") {
-            galleryTitle.classList.add('underline-custom')
+            galleryTitle.classList.add('underline')
         }
 
         if (anim.animationName == "translateFromLeft") {
-            galleryTitle.classList.add('underline-custom')
+            galleryTitle.classList.add('underline')
 
             for (const child of galleryCarouselInner.children) {
                 if (child.classList.contains("active")) {
@@ -79,7 +79,7 @@ gallery.addEventListener("animationend", function(anim) {
         }
 
         if (anim.animationName == "translateFromRight") {
-            galleryTitle.classList.add('underline-custom')
+            galleryTitle.classList.add('underline')
 
             for (const child of galleryCarouselInner.children) {
                 if (child.classList.contains("active")) {
@@ -99,11 +99,11 @@ gallery.addEventListener("animationend", function(anim) {
         }
 
         if (anim.animationName == "translateToLeft") {
-            galleryTitle.classList.remove('underline-custom')
+            galleryTitle.classList.remove('underline')
         }
 
         if (anim.animationName == "translateToRight") {
-            galleryTitle.classList.remove('underline-custom')
+            galleryTitle.classList.remove('underline')
         }
     }
 })
@@ -118,7 +118,7 @@ galleryTitle.addEventListener("animationend", function(anim) {
     if (anim.target === this) {
         if (anim.animationName == "translateFromRight") {
             galleryTitle.style.animation = ""
-            galleryTitle.classList.add('underline-custom')
+            galleryTitle.classList.add('underline')
         }
     }
 })
@@ -254,7 +254,7 @@ function animateGalleryOnScroll() {
             galleryTitle.style.animation = "translateFromRight 0.5s forwards"
         }
     } else {
-        galleryTitle.classList.remove('underline-custom')
+        galleryTitle.classList.remove('underline')
 
         if (isInViewportX(galleryTitle)) {
             galleryTitleWasInViewport = false
@@ -397,12 +397,12 @@ async function loadGalleryGrid() {
     for (let i = 0; i < data.gallery.length; i++) {
         let btn = document.createElement("button")
         btn.setAttribute("id", "gallery-item" + i)
-        btn.classList.add("gallery-item-custom")
+        btn.classList.add("gallery-item")
 
         btn.onclick = clickGalleryItem
 
         let img = document.createElement("img")
-        img.classList.add("gallery-img-custom")
+        img.classList.add("gallery-img")
         img.src = data.gallery[i].image
 
         galleryGrid.appendChild(btn)
@@ -417,7 +417,7 @@ function loadGalleryCarousel() {
         let div = document.createElement("div")
         div.setAttribute("id", "gallery-carousel-item" + i)
         div.classList.add("carousel-item")
-        div.classList.add("gallery-carousel-item-custom")
+        div.classList.add("gallery-carousel-item")
 
         let img = document.createElement("img")
         img.classList.add("d-block")
@@ -431,7 +431,7 @@ function loadGalleryCarousel() {
 
 function startupGalleryAnim() {
     if (galleryTitleWasInViewport && gallery.style.display == "block") {
-        galleryTitle.classList.add('underline-custom')
+        galleryTitle.classList.add('underline')
     }
 }
 

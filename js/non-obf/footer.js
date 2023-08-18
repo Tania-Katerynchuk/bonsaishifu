@@ -115,11 +115,11 @@ async function loadFooterText() {
     })
     const data = await res.json()
 
-    // footerAddress.innerHTML += '<i class="fa-solid fa-location-dot footer-fa-text-custom"></i>' + data.contact[0].address
-    footerTel.innerHTML += '<i class="fa-solid fa-phone footer-fa-text-custom"></i>' + data.contact[0].phone
-    footerEmail.innerHTML += '<i class="fa-solid fa-envelope footer-fa-text-custom"></i>' + data.contact[0].email
-    footerWorkTime1.innerHTML += '<i class="fa-solid fa-clock footer-fa-text-custom"></i>' + JSON.parse(data.contact[0].work_time)[0]
-    footerWorkTime2.innerHTML += '<i class="fa-solid fa-clock footer-fa-text-custom"></i>' + JSON.parse(data.contact[0].work_time)[1]
+    // footerAddress.innerHTML += '<i class="fa-solid fa-location-dot footer-fa-text"></i>' + data.contact[0].address
+    footerTel.innerHTML += '<i class="fa-solid fa-phone footer-fa-text"></i>' + data.contact[0].phone
+    footerEmail.innerHTML += '<i class="fa-solid fa-envelope footer-fa-text"></i>' + data.contact[0].email
+    footerWorkTime1.innerHTML += '<i class="fa-solid fa-clock footer-fa-text"></i>' + JSON.parse(data.contact[0].work_time)[0]
+    footerWorkTime2.innerHTML += '<i class="fa-solid fa-clock footer-fa-text"></i>' + JSON.parse(data.contact[0].work_time)[1]
 }
 
 function main() {

@@ -46,7 +46,7 @@ store.addEventListener("animationstart", function(anim) {
 store.addEventListener("animationend", function(anim) {
     if (anim.target === this) {
         if (anim.animationName == "opacityShow") {
-            storeTitle.classList.add('underline-custom')
+            storeTitle.classList.add('underline')
             
             if (bucketButton.style.visibility == "hidden") {
                 bucketButton.style.visibility = "visible"
@@ -55,7 +55,7 @@ store.addEventListener("animationend", function(anim) {
         }
 
         if (anim.animationName == "translateFromLeft") {
-            storeTitle.classList.add('underline-custom')
+            storeTitle.classList.add('underline')
 
             if (isBucketOpened) {
                 bucket.style.visibility = "visible"
@@ -70,7 +70,7 @@ store.addEventListener("animationend", function(anim) {
         }
 
         if (anim.animationName == "translateFromRight") {
-            storeTitle.classList.add('underline-custom')
+            storeTitle.classList.add('underline')
 
             if (isBucketOpened) {
                 bucket.style.visibility = "visible"
@@ -85,11 +85,11 @@ store.addEventListener("animationend", function(anim) {
         }
 
         if (anim.animationName == "translateToLeft") {
-            storeTitle.classList.remove('underline-custom')
+            storeTitle.classList.remove('underline')
         }
 
         if (anim.animationName == "translateToRight") {
-            storeTitle.classList.remove('underline-custom')
+            storeTitle.classList.remove('underline')
         }
     }
 })
@@ -104,7 +104,7 @@ storeTitle.addEventListener("animationend", function(anim) {
     if (anim.target === this) {
         if (anim.animationName == "translateFromRight") {
             storeTitle.style.animation = ""
-            storeTitle.classList.add('underline-custom')
+            storeTitle.classList.add('underline')
         }
     }
 })
@@ -119,7 +119,7 @@ storeGrid.addEventListener("animationend", function(anim) {
     if (anim.target === this) {
         if (anim.animationName == "translateFromLeft") {
             storeGrid.style.animation = ""
-            storeGrid.classList.add('underline-custom')
+            storeGrid.classList.add('underline')
         }
     }
 })
@@ -307,7 +307,7 @@ function animateStoreOnScroll() {
             storeTitle.style.animation = "translateFromRight 0.5s forwards"
         }
     } else {
-        storeTitle.classList.remove('underline-custom')
+        storeTitle.classList.remove('underline')
 
         if (isInViewportX(storeTitle)) {
             storeTitleWasInViewport = false
@@ -324,7 +324,7 @@ function animateStoreOnScroll() {
             storeGrid.style.animation = "translateFromLeft 0.5s forwards"
         }
     } else {
-        storeGrid.classList.remove('underline-custom')
+        storeGrid.classList.remove('underline')
 
         if (isInViewportX(storeGrid)) {
             storeGridWasInViewport = false
@@ -458,17 +458,17 @@ function totalBucket() {
             let grid = document.createElement("div")
             grid.setAttribute("id", "bucket-order-grid")
 
-            grid.classList.add("bucket-order-grid-custom")
+            grid.classList.add("bucket-order-grid")
 
             let p = document.createElement("p")
             p.setAttribute("id", "bucket-sum")
-            p.classList.add("bucket-sum-custom")
+            p.classList.add("bucket-sum")
             p.innerText = "Сума: ₴" + sum
 
             let btn = document.createElement("button")
             btn.classList.add("btn")
             btn.classList.add("btn-success")
-            btn.classList.add("bucket-confirm-order-custom")
+            btn.classList.add("bucket-confirm-order")
             btn.innerText = "Оформити замовлення"
 
             btn.onclick = clickBucketForm
@@ -485,7 +485,7 @@ function emptyBucket() {
     if (bucket.childElementCount == 0 || (bucket.childElementCount == 1 && document.getElementById('bucket-order-grid') !== null)) {
         let empty = document.createElement("p")
         empty.setAttribute("id", "bucket-empty")
-        empty.classList.add("bucket-empty-custom")
+        empty.classList.add("bucket-empty")
         empty.innerText = "Порожньо"
 
         bucket.appendChild(empty)
@@ -501,43 +501,43 @@ function emptyBucket() {
 function addToBucket(id) {
     let item = document.createElement("div")
     item.setAttribute("id", "bucket-item" + id)
-    item.classList.add("bucket-item-custom")
+    item.classList.add("bucket-item")
 
     let img = document.createElement("img")
-    img.classList.add("bucket-img-custom")
+    img.classList.add("bucket-img")
     img.src = document.getElementById('store-img' + id).src
 
     let labelGrid = document.createElement("div")
-    labelGrid.classList.add("bucket-label-grid-custom")
+    labelGrid.classList.add("bucket-label-grid")
 
     let name = document.createElement("p")
     name.setAttribute("id", "bucket-name" + id)
-    name.classList.add("bucket-name-custom")
+    name.classList.add("bucket-name")
     name.innerText = truncateString(document.getElementById('store-name' + id).innerText, 24)
 
     let desc = document.createElement("p")
-    desc.classList.add("bucket-desc-custom")
+    desc.classList.add("bucket-desc")
     desc.innerText = truncateString(document.getElementById('store-desc' + id).innerText, 128)
 
     let controlGrid = document.createElement("div")
-    controlGrid.classList.add("bucket-control-grid-custom")
+    controlGrid.classList.add("bucket-control-grid")
 
     let price = document.createElement("button")
     price.setAttribute("id", "bucket-price" + id)
     price.classList.add("btn")
     price.classList.add("btn-danger")
-    price.classList.add("bucket-price-custom")
+    price.classList.add("bucket-price")
     price.type = "button"
     price.innerText = truncateString("- " + document.getElementById('store-price' + id).textContent, 12)
 
     price.onclick = clickBucketItem
 
     let count = document.createElement("div")
-    count.classList.add("bucket-count-custom")
+    count.classList.add("bucket-count")
 
     let minus = document.createElement("button")
     minus.setAttribute("id", "bucket-minus" + id)
-    minus.classList.add("bucket-minus-custom")
+    minus.classList.add("bucket-minus")
     minus.type = "button"
     minus.innerText = "-"
 
@@ -545,7 +545,7 @@ function addToBucket(id) {
 
     let num = document.createElement("input")
     num.setAttribute("id", "bucket-num" + id)
-    num.classList.add("bucket-num-custom")
+    num.classList.add("bucket-num")
     num.type = "number"
     num.value = document.getElementById('store-num' + id).value
 
@@ -556,7 +556,7 @@ function addToBucket(id) {
 
     let plus = document.createElement("button")
     plus.setAttribute("id", "bucket-plus" + id)
-    plus.classList.add("bucket-plus-custom")
+    plus.classList.add("bucket-plus")
     plus.type = "button"
     plus.innerText = "+"
 
@@ -734,7 +734,7 @@ function createBucketForm() {
     form.setAttribute("id", "bucket-order-form")
     form.setAttribute("method", "POST")
     form.setAttribute("action", "https://formsubmit.co/83e950886d31d0b157c35e5bfe488f11")
-    form.classList.add("bucket-form-custom")
+    form.classList.add("bucket-form")
 
     let subjectInput = document.createElement('input')
     subjectInput.setAttribute("type", "hidden")
@@ -766,7 +766,7 @@ function createBucketForm() {
     nameInput.setAttribute("placeholder", "ПІБ")
     nameInput.setAttribute("minlength", "2")
     nameInput.setAttribute("maxlength", "64")
-    nameInput.classList.add("bucket-input-custom")
+    nameInput.classList.add("bucket-input")
 
     let emailLabel = document.createElement('label')
     emailLabel.innerText = "Введіть ел. пошту:"
@@ -778,7 +778,7 @@ function createBucketForm() {
     emailInput.setAttribute("placeholder", "Ел. пошта")
     emailInput.setAttribute("minlength", "4")
     emailInput.setAttribute("maxlength", "128")
-    emailInput.classList.add("bucket-input-custom")
+    emailInput.classList.add("bucket-input")
 
     let telLabel = document.createElement('label')
     telLabel.innerText = "Введіть номер телефону:"
@@ -792,7 +792,7 @@ function createBucketForm() {
     telInput.setAttribute("maxlength", "13")
     telInput.setAttribute("pattern", "^\\+\\d+")
     telInput.setAttribute("title", "+380971307474")
-    telInput.classList.add("bucket-input-custom")
+    telInput.classList.add("bucket-input")
 
     let delLabel = document.createElement('label')
     delLabel.innerText = "Введіть спосіб доставки і адресу (Нова пошта/Укр. пошта):"
@@ -804,7 +804,7 @@ function createBucketForm() {
     delInput.setAttribute("placeholder", "Пр.: \"м. Рівне, Нова Пошта №1\"")
     delInput.setAttribute("minlength", "16")
     delInput.setAttribute("maxlength", "128")
-    delInput.classList.add("bucket-input-custom")
+    delInput.classList.add("bucket-input")
 
     let label = document.createElement('label')
     label.innerText = "Введіть додаткову інформацію (якщо це потрібно):"
@@ -814,13 +814,13 @@ function createBucketForm() {
     textarea.setAttribute("name", "Додаткова інформація")
     textarea.setAttribute("placeholder", "Додаткова інформація")
     textarea.setAttribute("maxlength", "256")
-    textarea.classList.add("bucket-textarea-custom")
+    textarea.classList.add("bucket-textarea")
 
     let button = document.createElement('button')
     button.setAttribute("type", "submit")
     button.classList.add("btn")
     button.classList.add("btn-success")
-    button.classList.add("bucket-order-custom")
+    button.classList.add("bucket-order")
 
     button.innerText = "Замовити"
 
@@ -869,7 +869,7 @@ async function loadStoreGrid() {
         let card = document.createElement("div")
         card.setAttribute("id", "store-item" + i)
         card.classList.add("card")
-        card.classList.add("store-item-custom")
+        card.classList.add("store-item")
 
         let img = document.createElement("img")
         img.setAttribute("id", "store-img" + i)
@@ -890,13 +890,13 @@ async function loadStoreGrid() {
         desc.innerText = data.store[i].description
 
         let controlGrid = document.createElement("div")
-        controlGrid.classList.add("store-control-grid-custom")
+        controlGrid.classList.add("store-control-grid")
 
         let btn = document.createElement("button")
         btn.setAttribute("id", "store-price" + i)
         btn.classList.add("btn")
         btn.classList.add("btn-success")
-        btn.classList.add("store-price-custom")
+        btn.classList.add("store-price")
         btn.disabled = !data.store[i].stock
         btn.innerText = "₴" + data.store[i].price
 
@@ -904,11 +904,11 @@ async function loadStoreGrid() {
 
         let count = document.createElement("div")
         count.setAttribute("id", "store-count" + i)
-        count.classList.add("store-count-custom")
+        count.classList.add("store-count")
     
         let minus = document.createElement("button")
         minus.setAttribute("id", "store-minus" + i)
-        minus.classList.add("store-minus-custom")
+        minus.classList.add("store-minus")
         minus.type = "button"
         minus.innerText = "-"
 
@@ -916,7 +916,7 @@ async function loadStoreGrid() {
     
         let num = document.createElement("input")
         num.setAttribute("id", "store-num" + i)
-        num.classList.add("store-num-custom")
+        num.classList.add("store-num")
         num.type = "number"
         num.value = 1
 
@@ -927,7 +927,7 @@ async function loadStoreGrid() {
 
         let plus = document.createElement("button")
         plus.setAttribute("id", "store-plus" + i)
-        plus.classList.add("store-plus-custom")
+        plus.classList.add("store-plus")
         plus.type = "button"
         plus.innerText = "+"
 
@@ -964,7 +964,7 @@ async function loadStoreGrid() {
 
 function startupStoreAnim() {
     if (storeTitleWasInViewport && store.style.display == "block") {
-        storeTitle.classList.add('underline-custom')
+        storeTitle.classList.add('underline')
     }
 }
 

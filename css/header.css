@@ -52,16 +52,16 @@
     }
 }
 
-.banner-custom {
+.banner {
     cursor: pointer;
     z-index: 8;
 }
 
-.banner-custom:hover .banner-fa-pagelines-custom {
+.banner:hover .banner-fa-pagelines {
     animation: rotateFullRight360 0.7s;
 }
 
-.banner-brand-custom {
+.banner-brand {
     font-family: "bonzai";
     font-size: 48px;
     color: #212529;
@@ -70,26 +70,26 @@
     border: none;
 }
 
-.banner-fa-pagelines-custom {
+.banner-fa-pagelines {
     animation: rotateFullLeft360 0.7s;
     color: rgb(0, 150, 0);
 }
 
-.panel-custom {
+.panel {
     z-index: 8;
 }
 
-.panel-sticky-custom {
+.panel-sticky {
     position: fixed;
     top: 0;
     width: 100%;
 }
 
-.panel-toggler-custom:focus {
+.panel-toggler:focus {
     box-shadow: 0 0 0 0;
 }
 
-.panel-button-custom {
+.panel-button {
     font-family: "bonzai";
     font-size: 24px;
     color: #212529;
@@ -99,65 +99,65 @@
     padding-bottom: 8px;
 }
 
-.panel-button-custom:hover {
+.panel-button:hover {
     color: #666666;
 }
 
-.panel-fa-custom {
+.panel-fa {
     color: #212529;
     font-size: 18px;
 }
 
 @media (min-width: 992px) {
-    .navbar-expand-lg .navbar-nav .panel-button-custom {
+    .navbar-expand-lg .navbar-nav .panel-button {
         padding-right: 24px;
         padding-left: 24px;
     }
 }
 
 @media (max-width: 991px) {
-    .banner-custom:hover .banner-fa-pagelines-custom {
+    .banner:hover .banner-fa-pagelines {
         animation: none;
     }
 
-    .banner-fa-pagelines-custom {
+    .banner-fa-pagelines {
         animation: none;
     }
 
-    .panel-content-custom {
+    .panel-content {
         padding-top: 8px;
     }
     
-    .panel-button-custom {
+    .panel-button {
         margin-right: 100px;
         margin-left: 100px;
     }
 
-    .panel-content-custom .panel-button-custom:not(:last-child) {
+    .panel-content .panel-button:not(:last-child) {
         border-bottom: 1px solid #ebebeb;
     }
 
-    .panel-content-custom .panel-button-custom {
+    .panel-content .panel-button {
         margin-top: 10px;
         margin-bottom: 10px;
     }
 }
 
 @media (max-width: 767px) {
-    .banner-brand-custom {
+    .banner-brand {
         font-size: 42px;
     }
 
-    .panel-fa-custom {
+    .panel-fa {
         font-size: 14px;
     }
 
-    .panel-content-custom .panel-button-custom {
+    .panel-content .panel-button {
         font-size: 21px;
     }
 }
 
-.header-carousel-item-custom img {
+.header-carousel-item img {
     object-fit: cover;
     max-height: 300px;
     min-height: 300px;

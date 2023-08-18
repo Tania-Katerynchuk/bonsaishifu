@@ -18,23 +18,23 @@ window.addEventListener('resize', function () {
 news.addEventListener("animationend", function(anim) {
     if (anim.target === this) {
         if (anim.animationName == "opacityShow") {
-            newsTitle.classList.add('underline-custom')
+            newsTitle.classList.add('underline')
         }
 
         if (anim.animationName == "translateFromLeft") {
-            newsTitle.classList.add('underline-custom')
+            newsTitle.classList.add('underline')
         }
 
         if (anim.animationName == "translateFromRight") {
-            newsTitle.classList.add('underline-custom')
+            newsTitle.classList.add('underline')
         }
 
         if (anim.animationName == "translateToLeft") {
-            newsTitle.classList.remove('underline-custom')
+            newsTitle.classList.remove('underline')
         }
 
         if (anim.animationName == "translateToRight") {
-            newsTitle.classList.remove('underline-custom')
+            newsTitle.classList.remove('underline')
         }
     }
 })
@@ -49,7 +49,7 @@ newsTitle.addEventListener("animationend", function(anim) {
     if (anim.target === this) {
         if (anim.animationName == "translateFromRight") {
             newsTitle.style.animation = ""
-            newsTitle.classList.add('underline-custom')
+            newsTitle.classList.add('underline')
         }
     }
 })
@@ -90,7 +90,7 @@ function animateNewsOnScroll() {
             newsTitle.style.animation = "translateFromRight 0.5s forwards"
         }
     } else {
-        newsTitle.classList.remove('underline-custom')
+        newsTitle.classList.remove('underline')
 
         if (isInViewportX(newsTitle)) {
             newsTitleWasInViewport = false
@@ -123,21 +123,21 @@ async function loadNewsGrid() {
 
     for (let i = data.news.length - 1; i >= 0; i--) {
         let item = document.createElement("div")
-        item.classList.add("news-item-custom")
+        item.classList.add("news-item")
 
         let name = document.createElement("p")
-        name.classList.add("news-name-custom")
+        name.classList.add("news-name")
         name.innerText = data.news[i].title
 
         let date = document.createElement("p")
-        date.classList.add("news-date-custom")
+        date.classList.add("news-date")
         date.innerText = "01.01.2023"
 
         let content = document.createElement("div")
-        content.classList.add("news-content-custom")
+        content.classList.add("news-content")
 
         let desc = document.createElement("p")
-        desc.classList.add("news-desc-custom")
+        desc.classList.add("news-desc")
         desc.innerText = data.news[i].text
 
         newsGrid.appendChild(item)
@@ -152,7 +152,7 @@ async function loadNewsGrid() {
 
 function startupNewsAnim() {
     if (newsTitleWasInViewport && news.style.display == "block") {
-        newsTitle.classList.add('underline-custom')
+        newsTitle.classList.add('underline')
     }
 }
 

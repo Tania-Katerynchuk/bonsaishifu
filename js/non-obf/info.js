@@ -22,23 +22,23 @@ window.addEventListener('resize', function () {
 info.addEventListener("animationend", function(anim) {
     if (anim.target === this) {
         if (anim.animationName == "opacityShow") {
-            infoTitle.classList.add('underline-custom')
+            infoTitle.classList.add('underline')
         }
 
         if (anim.animationName == "translateFromLeft") {
-            infoTitle.classList.add('underline-custom')
+            infoTitle.classList.add('underline')
         }
 
         if (anim.animationName == "translateFromRight") {
-            infoTitle.classList.add('underline-custom')
+            infoTitle.classList.add('underline')
         }
 
         if (anim.animationName == "translateToLeft") {
-            infoTitle.classList.remove('underline-custom')
+            infoTitle.classList.remove('underline')
         }
 
         if (anim.animationName == "translateToRight") {
-            infoTitle.classList.remove('underline-custom')
+            infoTitle.classList.remove('underline')
         }
     }
 })
@@ -53,7 +53,7 @@ infoTitle.addEventListener("animationend", function(anim) {
     if (anim.target === this) {
         if (anim.animationName == "translateFromRight") {
             infoTitle.style.animation = ""
-            infoTitle.classList.add('underline-custom')
+            infoTitle.classList.add('underline')
         }
     }
 })
@@ -130,7 +130,7 @@ function animateInfoOnScroll() {
             infoTitle.style.animation = "translateFromRight 0.5s forwards"
         }
     } else {
-        infoTitle.classList.remove('underline-custom')
+        infoTitle.classList.remove('underline')
 
         if (isInViewportX(infoTitle)) {
             infoTitleWasInViewport = false
@@ -205,8 +205,8 @@ async function loadMiniGallery() {
         let miniGalleryItem = document.getElementById('mini-gallery-item-pos' + (i + 1))
 
         let img = document.createElement("img")
-        img.classList.add("mini-gallery-img-custom")
-        if (i == 2) { img.classList.add("mini-gallery-size-custom") }
+        img.classList.add("mini-gallery-img")
+        if (i == 2) { img.classList.add("mini-gallery-size") }
         img.src = JSON.parse(data.info[0].mini_gallery)[i]
 
         miniGalleryItem.appendChild(img)
@@ -215,7 +215,7 @@ async function loadMiniGallery() {
 
 function startupInfoAnim() {
     if (infoTitleWasInViewport && info.style.display == "block") {
-        infoTitle.classList.add('underline-custom')
+        infoTitle.classList.add('underline')
     }
 }
 

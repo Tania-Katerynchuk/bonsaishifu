@@ -26,23 +26,23 @@ window.addEventListener('resize', function () {
 contact.addEventListener("animationend", function(anim) {
     if (anim.target === this) {
         if (anim.animationName == "opacityShow") {
-            contactTitle.classList.add('underline-custom')
+            contactTitle.classList.add('underline')
         }
 
         if (anim.animationName == "translateFromLeft") {
-            contactTitle.classList.add('underline-custom')
+            contactTitle.classList.add('underline')
         }
 
         if (anim.animationName == "translateFromRight") {
-            contactTitle.classList.add('underline-custom')
+            contactTitle.classList.add('underline')
         }
 
         if (anim.animationName == "translateToLeft") {
-            contactTitle.classList.remove('underline-custom')
+            contactTitle.classList.remove('underline')
         }
 
         if (anim.animationName == "translateToRight") {
-            contactTitle.classList.remove('underline-custom')
+            contactTitle.classList.remove('underline')
         }
     }
 })
@@ -57,7 +57,7 @@ contactTitle.addEventListener("animationend", function(anim) {
     if (anim.target === this) {
         if (anim.animationName == "translateFromRight") {
             contactTitle.style.animation = ""
-            contactTitle.classList.add('underline-custom')
+            contactTitle.classList.add('underline')
         }
     }
 })
@@ -72,7 +72,7 @@ contactGrid.addEventListener("animationend", function(anim) {
     if (anim.target === this) {
         if (anim.animationName == "translateFromLeft") {
             contactGrid.style.animation = ""
-            contactGrid.classList.add('underline-custom')
+            contactGrid.classList.add('underline')
         }
     }
 })
@@ -88,7 +88,7 @@ contactGrid.addEventListener("animationend", function(anim) {
 
 //     if (anim.animationName == "translateFromRight") {
 //         contactMap.style.animation = ""
-//         contactMap.classList.add('underline-custom')
+//         contactMap.classList.add('underline')
 //     }
 // }
 // })
@@ -119,7 +119,7 @@ function animateContactOnScroll() {
             contactTitle.style.animation = "translateFromRight 0.5s forwards"
         }
     } else {
-        contactTitle.classList.remove('underline-custom')
+        contactTitle.classList.remove('underline')
 
         if (isInViewportX(contactTitle)) {
             contactTitleWasInViewport = false
@@ -164,7 +164,7 @@ function setContactNext() {
 
 function startupContactAnim() {
     if (contactTitleWasInViewport && contact.style.display == "block") {
-        contactTitle.classList.add('underline-custom')
+        contactTitle.classList.add('underline')
     }
 }
 
@@ -175,11 +175,11 @@ async function loadContactText() {
     })
     const data = await res.json()
 
-    contactTel.innerHTML += data.contact[0].phone + '<i class="fa-solid fa-phone contact-left-fa-custom"></i>'
-    contactEmail.innerHTML += data.contact[0].email + '<i class="fa-solid fa-envelope contact-left-fa-custom"></i>'
-    contactWorkTime1.innerHTML += JSON.parse(data.contact[0].work_time)[0] + '<i class="fa-solid fa-clock contact-left-fa-custom"></i>'
-    contactWorkTime2.innerHTML += JSON.parse(data.contact[0].work_time)[1]  + '<i class="fa-solid fa-clock contact-left-fa-custom"></i>'
-    // contactAddress.innerHTML += data.contact[0].address + '<i class="fa-solid fa-signs-post contact-right-fa-custom"></i>'
+    contactTel.innerHTML += data.contact[0].phone + '<i class="fa-solid fa-phone contact-left-fa"></i>'
+    contactEmail.innerHTML += data.contact[0].email + '<i class="fa-solid fa-envelope contact-left-fa"></i>'
+    contactWorkTime1.innerHTML += JSON.parse(data.contact[0].work_time)[0] + '<i class="fa-solid fa-clock contact-left-fa"></i>'
+    contactWorkTime2.innerHTML += JSON.parse(data.contact[0].work_time)[1]  + '<i class="fa-solid fa-clock contact-left-fa"></i>'
+    // contactAddress.innerHTML += data.contact[0].address + '<i class="fa-solid fa-signs-post contact-right-fa"></i>'
 }
 
 function main() {
